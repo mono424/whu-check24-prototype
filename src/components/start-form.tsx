@@ -58,7 +58,8 @@ export default function StartForm({}: StartFormProps) {
                     { label: "2000€ - 5000€", value: "2000-5000" },
                 ]} />
             </div>
-            <div className="flex gap-1 mt-1 bg-white rounded">
+            <div className="gap-1 mt-3 bg-[#0470c2] text-white rounded">
+                <h3 className="pt-1 px-2">Prompte jetzt deinen perfekten Urlaub!</h3>
                 <AIPrompt placeholders={aiPlaceholders} />
             </div>
             <div className="mt-1">

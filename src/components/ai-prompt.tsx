@@ -47,7 +47,7 @@ export default function AIPrompt({ placeholders }: AIPromptProps) {
     }, [focused]);
     
 
-    return <div className="p-2 bg-white rounded w-full">
+    return <div className="p-2 bg-white rounded w-full text-black">
         <textarea placeholder={placeholder} onFocus={onFocus} onBlur={onBlur} className="w-full text-xl outline-none" />
     </div>;
 }
