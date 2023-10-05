@@ -9,7 +9,7 @@ type InstagramPostProps = {
 
 const InstagramPost = ({ profilePic, imageUrl, username, caption }: InstagramPostProps) => {
     return (
-        <div className="border border-gray-300 rounded p-4 mx-2 mb-2 w-[87%] shrink-0">
+        <div className="border bg-white border-gray-300 rounded p-4 mx-2 mb-2 w-[87%] shrink-0">
             <div className="flex items-center mb-2.5">
                 <img src={profilePic} alt="profile" className="w-8 h-8 rounded-full mr-2.5" />
                 <span>{username}</span>

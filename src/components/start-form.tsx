@@ -5,6 +5,7 @@ import AIPrompt from "./ai-prompt";
 import CustomSelect from "./custom-select";
 import CustomCheckbox from "./custom-checkbox";
 import CustomChips from "./custom-chips";
+import { useRouter } from "next/navigation";
 
 type StartFormProps = {};
 
@@ -16,10 +17,15 @@ const aiPlaceholders = [
 ];
 
 export default function StartForm({}: StartFormProps) {
+    const router = useRouter();
     const [startDate, setStartDate] = React.useState(new Date().toLocaleDateString('en-CA'));
     const [selectedItems, setSelectedItems] = React.useState(["Flug", "Unterkunft"]);
     const [adultCount, setAdultCount] = React.useState(2);
     const [childrenCount, setChildrenCount] = React.useState(0);
+
+    const submit = () => {
+        router.push("/loading");
+    };
 
     return <div className="px-2 py-4">
         <div className="w-full bg-[#ffbb1b] p-1.5 rounded">
@@ -65,7 +71,7 @@ export default function StartForm({}: StartFormProps) {
             <div className="mt-1">
                 <CustomCheckbox title="CO2-freundlichen Urlaub bevorzugen" />
             </div>
-            <button className="w-full mt-2 bg-[#0470c2] text-white rounded py-4 text-xl shadow-lg">
+            <button onClick={submit} className="w-full mt-2 bg-[#0470c2] text-white rounded py-4 text-xl shadow-lg">
                 Überrasch mich!
             </button>
         </div>
