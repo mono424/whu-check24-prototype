@@ -1,17 +1,22 @@
 "use client";
 import ResultCard from '@/components/result-card';
-import { categories } from '@/services/state';
+import useLocalStorage from "use-local-storage";
+import { categories } from '@/constants';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 export default function Loading() {
+  const [cat] = useLocalStorage("cat", 0);
   const router = useRouter();
-  const category = categories[0];
+  const category = categories[cat];
 
   useEffect(() => {
-    setTimeout(() => {
+    const internval = setTimeout(() => {
       router.push('/result');
     }, 3000);
+    return () => {
+      clearTimeout(internval);
+    };
   }, []);
 
   return (

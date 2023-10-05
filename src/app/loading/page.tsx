@@ -1,11 +1,13 @@
 "use client";
-import { categories } from '@/services/state';
+import useLocalStorage from "use-local-storage";
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import { categories } from "@/constants";
 
 export default function Loading() {
+  const [cat] = useLocalStorage("cat", 0);
   const router = useRouter();
-  const category = categories[0];
+  const category = categories[cat];
 
   useEffect(() => {
     setTimeout(() => {

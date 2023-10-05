@@ -5,7 +5,9 @@ import AIPrompt from "./ai-prompt";
 import CustomSelect from "./custom-select";
 import CustomCheckbox from "./custom-checkbox";
 import CustomChips from "./custom-chips";
+import useLocalStorage from "use-local-storage";
 import { useRouter } from "next/navigation";
+import { categories } from "@/constants";
 
 type StartFormProps = {};
 
@@ -18,12 +20,14 @@ const aiPlaceholders = [
 
 export default function StartForm({}: StartFormProps) {
     const router = useRouter();
+    const [cat, setCat] = useLocalStorage("cat", -1);
     const [startDate, setStartDate] = React.useState(new Date().toLocaleDateString('en-CA'));
     const [selectedItems, setSelectedItems] = React.useState(["Flug", "Unterkunft"]);
     const [adultCount, setAdultCount] = React.useState(2);
     const [childrenCount, setChildrenCount] = React.useState(0);
 
     const submit = () => {
+        setCat(0);
         router.push("/loading");
     };
 
