@@ -12,7 +12,7 @@ const ResultCard = ({ category }: ResultCardProps) => {
                 Individuelles Angebot
             </div>
             <div className="flex justify-between px-4 mt-14">
-                <img src={category.imageUrl} alt="profile" className="w-40 h-40 rounded-lg mr-2.5" />
+                <img src={category.details.image} alt="profile" className="w-40 h-40 rounded-lg mr-2.5" />
                 <div className="grow">
                     <div className="text-lg font-bold">{category.details.title}</div>
                     <div className="text-sm text-gray-500">{category.details.destination}</div>

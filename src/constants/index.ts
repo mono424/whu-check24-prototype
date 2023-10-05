@@ -3,6 +3,7 @@ export type Category = {
     imageUrl: string;
     keywords: string[];
     details: {
+        image: string;
         title: string;
         destination: string;
         airport: string;
@@ -23,6 +24,7 @@ export const categories: Category[] = [
       imageUrl: "/img/load-city.jpg",
       keywords: ["stadt", "city", "urban", "metropole", "großstadt"],
       details: {
+        image: "/img/cat-singapur.jpg",
         title: "Städtereise nach Singapur",
         destination: "Singapur",
         airport: "Flughafen Singapur (SIN)",
@@ -41,6 +43,7 @@ export const categories: Category[] = [
       imageUrl: "/img/load-island.jpg",
       keywords: ["strand", "beach", "insel", "inseln", "island", "sea", "meer", "ozean"],
       details: {
+        image: "/img/cat-kreta.jpg",
         title: "Insel-Urlaub auf Kreta",
         destination: "Kreta",
         airport: "Flughafen Heraklion (HER)",
@@ -59,6 +62,7 @@ export const categories: Category[] = [
       imageUrl: "/img/load-mountain.jpg",
       keywords: ["berg", "berge", "mountain", "alpen", "alps", "gebirge"],
       details: {
+        image: "/img/cat-innsbruck.jpg",
         title: "Urlaub in den Bergen",
         destination: "Innsbruck",
         airport: "Flughafen Innsbruck (INN)",
