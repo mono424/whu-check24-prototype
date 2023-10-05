@@ -5,7 +5,7 @@ type AIPromptProps = {
     placeholders: string[]
 };
 
-const cooldownNumebr = 200;
+const cooldownNumebr = 50;
 
 export default function AIPrompt({ placeholders }: AIPromptProps) {
     const [placeholder, setPlaceholder] = useState("")
@@ -30,10 +30,11 @@ export default function AIPrompt({ placeholders }: AIPromptProps) {
                 setPlaceholder(text.substring(0, i));
                 i++;
                 if (i > text.length) {
+                    i = 0;
                     cooldown = cooldownNumebr;
                     placeholderIndex = (placeholderIndex + 1) % placeholders.length;
                 }
-            }, 100);
+            }, 50);
         }
 
         return () => {
