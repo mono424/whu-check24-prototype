@@ -32,6 +32,8 @@ export default function StartForm({}: StartFormProps) {
         router.push("/loading");
     };
 
+    const buttonDisabled = prompt.length === 0;
+
     return <div className="px-2 py-4">
         <div className="w-full bg-[#ffbb1b] p-1.5 rounded">
             <div className="flex gap-1 mb-1 bg-white rounded">
@@ -76,7 +78,7 @@ export default function StartForm({}: StartFormProps) {
             <div className="mt-1">
                 <CustomCheckbox title="CO2-freundlichen Urlaub bevorzugen" />
             </div>
-            <button onClick={submit} className="w-full mt-2 bg-[#0470c2] text-white rounded py-4 text-xl shadow-lg">
+            <button disabled={buttonDisabled} onClick={submit} className="w-full mt-2 bg-[#0470c2] disabled:bg-[#a8a8a8] disabled:shadow-none text-white rounded py-4 text-xl shadow-lg">
                 Überrasch mich!
             </button>
         </div>
