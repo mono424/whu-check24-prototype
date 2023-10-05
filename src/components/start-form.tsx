@@ -15,17 +15,20 @@ export default function StartForm({}: StartFormProps) {
     return <div className="px-2 py-4">
         <div className="w-full bg-[#ffbb1b] p-1.5 rounded">
             <div className="flex gap-1 mb-1">
-                <CustomInput title="Zeitraum" />
-                <CustomInput title="Reisedauer" />
+                <CustomInput title="Zeitraum" type="date"/>
+                <CustomInput title="Reisedauer" value="1 Woche" />
             </div>
-            <CustomInput title="Abflughafen" />
+            <CustomInput title="Abflughafen" value="Köln-Bonn (CGN)" />
             <div className="flex gap-1 mt-1 bg-white rounded">
-                <CustomInput title="Erwachsene" />
-                <CustomInput title="Kinder" />
+                <CustomInput title="Erwachsene" value="2" />
+                <CustomInput title="Kinder" value="0" />
             </div>
             <div className="flex gap-1 mt-1 bg-white rounded">
                 <AIPrompt placeholders={aiPlaceholders} />
             </div>
+            <button
+                className="w-full mt-2 bg-[#0470c2] text-white rounded py-4 text-xl shadow-lg"
+            >Überarsch mich!</button>
         </div>
     </div>;
 }
