@@ -16,7 +16,7 @@ export default function AIPrompt({ placeholders }: AIPromptProps) {
 
     useEffect(() => {
         let interval: NodeJS.Timeout|null = null;
-        if (focused) {
+        if (!focused) {
             let cooldown = 0;
             let placeholderIndex = 0;
             let i = 0;
