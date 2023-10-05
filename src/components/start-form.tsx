@@ -4,6 +4,7 @@ import CustomInput from "./custom-input";
 import AIPrompt from "./ai-prompt";
 import CustomSelect from "./custom-select";
 import CustomCheckbox from "./custom-checkbox";
+import CustomChips from "./custom-chips";
 
 type StartFormProps = {};
 
@@ -15,13 +16,18 @@ const aiPlaceholders = [
 ];
 
 export default function StartForm({}: StartFormProps) {
+    const [startDate, setStartDate] = React.useState(new Date().toLocaleDateString('en-CA'));
+    const [selectedItems, setSelectedItems] = React.useState(["Flug", "Unterkunft"]);
     const [adultCount, setAdultCount] = React.useState(2);
     const [childrenCount, setChildrenCount] = React.useState(0);
 
     return <div className="px-2 py-4">
         <div className="w-full bg-[#ffbb1b] p-1.5 rounded">
+            <div className="flex gap-1 mb-1 bg-white rounded">
+                <CustomChips selectedItems={selectedItems} onChange={setSelectedItems} items={["Flug", "Unterkunft", "Mietwagen"]}/>
+            </div>
             <div className="flex gap-1 mb-1">
-                <CustomInput title="Zeitraum" type="date"/>
+                <CustomInput title="Zeitraum" type="date" value={startDate} onChange={setStartDate} />
                 <CustomSelect title="Reisedauer" items={[
                     { label: "3 Tage", value: "3T" },
                     { label: "4 Tage", value: "4T" },
