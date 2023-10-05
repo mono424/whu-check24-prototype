@@ -8,6 +8,7 @@ export default function Loading() {
   const [cat] = useLocalStorage("cat", 0);
   const router = useRouter();
   const category = categories[cat];
+  console.log(cat, category);
 
   useEffect(() => {
     setTimeout(() => {

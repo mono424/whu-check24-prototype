@@ -29,7 +29,7 @@ export default function Loading() {
       </div>
 
       <div className="w-full">
-        <ResultCard imageUrl='/img/vac2.jpg' location='Playa de Muro' title='Spanien Urlaub' price='399,-' />
+        <ResultCard category={category} />
       </div>
     </main>
   )

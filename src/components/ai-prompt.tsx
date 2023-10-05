@@ -2,12 +2,14 @@
 import React, {useState, useEffect} from "react";
 
 type AIPromptProps = {
+    value: string,
+    onChange: (value: string) => void,
     placeholders: string[]
 };
 
 const cooldownNumber = 50;
 
-export default function AIPrompt({ placeholders }: AIPromptProps) {
+export default function AIPrompt({ value, onChange, placeholders }: AIPromptProps) {
     const [placeholder, setPlaceholder] = useState("")
     const [focused, setFocused] = useState(false)
 
@@ -48,6 +50,6 @@ export default function AIPrompt({ placeholders }: AIPromptProps) {
     
 
     return <div className="p-2 bg-white rounded w-full text-black">
-        <textarea placeholder={placeholder} onFocus={onFocus} onBlur={onBlur} className="w-full text-xl outline-none" />
+        <textarea value={value} onChange={(e) => onChange(e.currentTarget.value)} placeholder={placeholder} onFocus={onFocus} onBlur={onBlur} className="w-full text-xl outline-none" />
     </div>;
 }

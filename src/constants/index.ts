@@ -2,22 +2,82 @@ export type Category = {
     key: string;
     imageUrl: string;
     keywords: string[];
+    details: {
+        title: string;
+        destination: string;
+        airport: string;
+        hotel: string;
+        room: string;
+        catering: string;
+        carCategorie: string;
+        pickup: string;
+        dropoff: string;
+        price: string;
+        co2: string;
+    }
 }
 
 export const categories: Category[] = [
     {
       key: "1",
       imageUrl: "/img/load-city.jpg",
-      keywords: ["Stadt", "City", "Urban", "Metropole", "Großstadt"],
+      keywords: ["stadt", "city", "urban", "metropole", "großstadt"],
+      details: {
+        title: "Städtereise nach Singapur",
+        destination: "Singapur",
+        airport: "Flughafen Singapur (SIN)",
+        hotel: "Hotel Singapur",
+        room: "Doppelzimmer",
+        catering: "Frühstück",
+        carCategorie: "Kleinwagen",
+        pickup: "Flughafen",
+        dropoff: "Flughafen",
+        price: "1.200€",
+        co2: "1,2t",
+      }
     },
     {
       key: "2",
       imageUrl: "/img/load-island.jpg",
-      keywords: ["Insel", "Island", "Sea", "Meer", "Ozean"],
+      keywords: ["strand", "beach", "insel", "inseln", "island", "sea", "meer", "ozean"],
+      details: {
+        title: "Insel-Urlaub auf Kreta",
+        destination: "Kreta",
+        airport: "Flughafen Heraklion (HER)",
+        hotel: "Hotel Kreta",
+        room: "Doppelzimmer",
+        catering: "Halbpension",
+        carCategorie: "Kleinwagen",
+        pickup: "Flughafen",
+        dropoff: "Flughafen",
+        price: "1.000€",
+        co2: "0,3t",
+      }
     },
     {
       key: "3",
       imageUrl: "/img/load-mountain.jpg",
-      keywords: ["Berg", "Mountain", "Alpen", "Alps", "Gebirge"],
+      keywords: ["berg", "berge", "mountain", "alpen", "alps", "gebirge"],
+      details: {
+        title: "Urlaub in den Bergen",
+        destination: "Innsbruck",
+        airport: "Flughafen Innsbruck (INN)",
+        hotel: "Hotel Innsbruck",
+        room: "Doppelzimmer",
+        catering: "Frühstück",
+        carCategorie: "Kleinwagen",
+        pickup: "Flughafen",
+        dropoff: "Flughafen",
+        price: "450€",
+        co2: "0,4t",
+      }
     },
 ];
+
+export function predict(promp: string) {
+    const keywords = promp.split(" ");
+    const categoryIndex = categories.findIndex(category => {
+        return keywords.some(keyword => category.keywords.includes(keyword.toLowerCase()));
+    });
+    return categoryIndex;
+}

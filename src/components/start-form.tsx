@@ -7,7 +7,7 @@ import CustomCheckbox from "./custom-checkbox";
 import CustomChips from "./custom-chips";
 import useLocalStorage from "use-local-storage";
 import { useRouter } from "next/navigation";
-import { categories } from "@/constants";
+import { categories, predict } from "@/constants";
 
 type StartFormProps = {};
 
@@ -25,9 +25,10 @@ export default function StartForm({}: StartFormProps) {
     const [selectedItems, setSelectedItems] = React.useState(["Flug", "Unterkunft"]);
     const [adultCount, setAdultCount] = React.useState(2);
     const [childrenCount, setChildrenCount] = React.useState(0);
+    const [prompt, setPrompt] = React.useState("");
 
     const submit = () => {
-        setCat(0);
+        setCat(predict(prompt));
         router.push("/loading");
     };
 
@@ -70,7 +71,7 @@ export default function StartForm({}: StartFormProps) {
             </div>
             <div className="gap-1 mt-3 bg-[#0470c2] text-white rounded">
                 <h3 className="pt-1 px-2">Prompte jetzt deinen perfekten Urlaub!</h3>
-                <AIPrompt placeholders={aiPlaceholders} />
+                <AIPrompt value={prompt} onChange={setPrompt} placeholders={aiPlaceholders} />
             </div>
             <div className="mt-1">
                 <CustomCheckbox title="CO2-freundlichen Urlaub bevorzugen" />
