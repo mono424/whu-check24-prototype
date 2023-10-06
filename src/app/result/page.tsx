@@ -25,7 +25,7 @@ export default function Loading() {
 
       <div className="flex flex-col justify-start items-start mx-3">
         <h3 className="mt-3 font-bold">Dein individuelles Angebot</h3>
-        <div className="text-gray-500">Wir haben dir ein individuelles Angebot erstellt. Das Angebot ist für die nächsten 60min reserviert für dich.</div>
+        <div className="text-gray-500">Wir haben Dir ein individuelles Angebot erstellt. Das Angebot ist für die nächsten 60min für Dich reserviert.</div>
       </div>
 
       <div className="w-full">

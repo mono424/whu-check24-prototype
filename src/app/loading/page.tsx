@@ -23,8 +23,8 @@ export default function Loading() {
       </div>
 
       <div className="flex flex-col justify-center items-center">
-        <h3 className="mt-3 font-bold">Erstellung deines Angebots</h3>
-        <div className="text-center text-gray-500">Wir erstellen dir jetzt ein auf dich individuel angepasstes Angebot ...</div>
+        <h3 className="mt-3 font-bold">Erstellung Deines Angebots</h3>
+        <div className="text-center text-gray-500">Wir erstellen Dir jetzt ein auf Dich individuell angepasstes Angebot ...</div>
       </div>
 
       <div className="mt-32">
