@@ -56,7 +56,7 @@ export const categories: Category[] = [
         carCategorie: "Kleinwagen",
         pickup: "Flughafen",
         dropoff: "Flughafen",
-        price: "1.000€",
+        price: "350€",
         co2: "0,3t",
       }
     },
