@@ -23,11 +23,11 @@ const ResultCard = ({ category }: ResultCardProps) => {
                    <h3 className="font-bold mt-4">Dein Flug</h3>
                     <div className="flex justify-between py-1">
                         <div className="text-sm text-gray-500">Abflug</div>
-                        <div className="text-sm">Köln-Bonn (CGN)</div>
+                        <div className="text-sm">{category.details.startAirport}</div>
                     </div>
                     <div className="flex justify-between py-1">
                         <div className="text-sm text-gray-500">Ankunft</div>
-                        <div className="text-sm">{category.details.airport}</div>
+                        <div className="text-sm">{category.details.endAirport}</div>
                     </div>
                 </div>
                 <div className="px-6 my-2">

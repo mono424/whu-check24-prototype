@@ -6,7 +6,8 @@ export type Category = {
         image: string;
         title: string;
         destination: string;
-        airport: string;
+        startAirport: string;
+        endAirport: string;
         hotel: string;
         room: string;
         catering: string;
@@ -27,7 +28,8 @@ export const categories: Category[] = [
         image: "/img/cat-singapur.jpg",
         title: "Städtereise nach Singapur",
         destination: "Singapur",
-        airport: "Flughafen Singapur (SIN)",
+        startAirport: "Köln-Bonn (CGN)",
+        endAirport: "Flughafen Singapur (SIN)",
         hotel: "Hotel Singapur",
         room: "Doppelzimmer",
         catering: "Frühstück",
@@ -46,7 +48,8 @@ export const categories: Category[] = [
         image: "/img/cat-kreta.jpg",
         title: "Insel-Urlaub auf Kreta",
         destination: "Kreta",
-        airport: "Flughafen Heraklion (HER)",
+        startAirport: "Köln-Bonn (CGN)",
+        endAirport: "Flughafen Heraklion (HER)",
         hotel: "Hotel Kreta",
         room: "Doppelzimmer",
         catering: "Halbpension",
@@ -65,7 +68,8 @@ export const categories: Category[] = [
         image: "/img/cat-innsbruck.jpg",
         title: "Urlaub in den Bergen",
         destination: "Innsbruck",
-        airport: "Flughafen Innsbruck (INN)",
+        startAirport: "Köln-Bonn (CGN)",
+        endAirport: "Flughafen Innsbruck (INN)",
         hotel: "Hotel Innsbruck",
         room: "Doppelzimmer",
         catering: "Frühstück",
@@ -76,6 +80,26 @@ export const categories: Category[] = [
         co2: "0,4t",
       }
     },
+    {
+      key: "4",
+      imageUrl: "/img/load-roadtrip.jpg",
+      keywords: ["roadtrip", "norwegen", "natur", "landschaft", "reise", "wohnwagen"],
+      details: {
+        image: "/img/cat-norway.jpg",
+        title: "Roadtrip durch Norwegen",
+        destination: "Norwegen", 
+        startAirport: "Köln-Bonn (CGN)",
+        endAirport: "Flughafen Oslo (OSL)", 
+        hotel: "-",
+        room: "-",
+        catering: "-",
+        carCategorie: "SUV oder Wohnmobil",
+        pickup: "Flughafen", 
+        dropoff: "Flughafen", 
+        price: "279€",
+        co2: "0.5t", 
+      }
+    }
 ];
 
 export function predict(promp: string) : number {
