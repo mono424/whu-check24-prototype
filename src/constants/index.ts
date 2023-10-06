@@ -60,7 +60,7 @@ export const categories: Category[] = [
     {
       key: "3",
       imageUrl: "/img/load-mountain.jpg",
-      keywords: ["berg", "berge", "mountain", "alpen", "alps", "gebirge"],
+      keywords: ["berg", "berge", "mountain", "alpen", "alps", "gebirge", "wandern"],
       details: {
         image: "/img/cat-innsbruck.jpg",
         title: "Urlaub in den Bergen",
