@@ -13,6 +13,6 @@ export default function CustomInput({ title, placeholder, type, value, onChange 
 
     return <div className="p-2 bg-white rounded w-full relative">
         <span className="top-0 text-black/40 text-sm w-full">{title}</span>
-        <input type={type} value={value} onChange={onChangeHandler} placeholder={placeholder} className="w-full text-xl outline-none bg-white" />
+        <input type={type} value={value} onChange={onChangeHandler} placeholder={placeholder} className="w-full block text-xl outline-none bg-white" />
     </div>;
 }
