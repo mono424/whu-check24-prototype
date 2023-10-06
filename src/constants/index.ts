@@ -78,10 +78,10 @@ export const categories: Category[] = [
     },
 ];
 
-export function predict(promp: string) {
+export function predict(promp: string) : number {
     const keywords = promp.split(" ");
     const categoryIndex = categories.findIndex(category => {
         return keywords.some(keyword => category.keywords.includes(keyword.toLowerCase()));
     });
-    return categoryIndex === -1 ? 0 : categories[categoryIndex];
+    return categoryIndex === -1 ? 0 : categoryIndex;
 }
