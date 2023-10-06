@@ -72,14 +72,14 @@ export default function StartForm({}: StartFormProps) {
                 ]} />
             </div>
             <div className="gap-1 mt-3 bg-[#0470c2] text-white rounded">
-                <h3 className="pt-1 px-2">Prompte jetzt deinen perfekten Urlaub!</h3>
+                <h3 className="pt-1 px-2">Prompte jetzt Deinen perfekten Urlaub!</h3>
                 <AIPrompt value={prompt} onChange={setPrompt} placeholders={aiPlaceholders} />
             </div>
             <div className="mt-1">
                 <CustomCheckbox title="CO2-freundlichen Urlaub bevorzugen" />
             </div>
             <button disabled={buttonDisabled} onClick={submit} className="w-full mt-2 bg-[#0470c2] disabled:bg-[#a8a8a8] disabled:shadow-none text-white rounded py-4 text-xl shadow-lg">
-                Überrasch mich!
+                Überrasche mich!
             </button>
         </div>
     </div>;

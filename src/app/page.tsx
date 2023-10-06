@@ -37,9 +37,9 @@ export default function Home() {
   return (
     <main>
       <Eyecatcher
-        title={"Exclusive Urlaubsangebote"}
+        title={"Exklusive Urlaubsangebote"}
         subtitle={<span>
-          Spaare bis zu <b>50%</b> bei deinem nächsten Urlaub!
+          Spare bis zu <b>50%</b> bei Deinem nächsten Urlaub!
         </span>}
         features={[
           {
@@ -52,7 +52,7 @@ export default function Home() {
           },
           {
             key: "Individuelles Angebot",
-            children: <span>Du bekommst ein individuell auf dich angepasstes Angebot</span>
+            children: <span>Du bekommst ein individuell auf Dich angepasstes Angebot</span>
           }
         ]}
       />
