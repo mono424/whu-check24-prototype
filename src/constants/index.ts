@@ -83,5 +83,5 @@ export function predict(promp: string) {
     const categoryIndex = categories.findIndex(category => {
         return keywords.some(keyword => category.keywords.includes(keyword.toLowerCase()));
     });
-    return categoryIndex;
+    return categoryIndex === -1 ? 0 : categories[categoryIndex];
 }
